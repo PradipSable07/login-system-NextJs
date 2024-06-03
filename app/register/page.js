@@ -11,7 +11,7 @@ const Register = () => {
 
   const handleRegister = async (data) => {
     try {
-      const response = await axios.post(`/api/register`, data);
+      const response = await axios.post(`https://login-system-umber.vercel.app/api/register`, data);
 
       if (response.status === 200) {
         router.push('/login');

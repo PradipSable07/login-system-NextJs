@@ -22,9 +22,9 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await axios.get('/api/getAllUsers');
-                console.log(response)
-                setUsers(response.data);
+                const response = await axios.get('https://login-system-umber.vercel.app/api/getAllUsers');
+                console.log(response.data.data)
+                setUsers(response.data.data);
             } catch (error) {
                 console.error('Error fetching users:', error);
             }

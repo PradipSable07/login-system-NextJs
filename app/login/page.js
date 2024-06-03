@@ -13,14 +13,19 @@ const Login = () => {
   const [error, setError] = useState('');
   const router = useRouter();
 
+
+  /**
+   *  Login user with email and password
+   * @param {*} e 
+   */
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/login', { email, password });
-
+      const response = await axios.post('https://login-system-umber.vercel.app/api/login', { email, password });
+      console.log(response);
       if (response.status === 200) {
-        setUser(response.data.user);
-        localStorage.setItem('user', JSON.stringify(response.data.user));
+        setUser(response.data.data);
+        localStorage.setItem('user', JSON.stringify(response.data.data));
         router.push('/dashboard');
       }
     } catch (error) {

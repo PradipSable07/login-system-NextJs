@@ -1,11 +1,13 @@
 // utils/model.js
 
 import mongoose from 'mongoose';
-
+/**
+ * User model schema for MongoDB database
+ */
 const UserSchema = new mongoose.Schema({
   fullName: { type: String, required: true },
   email: { type: String, required: true, unique: true },
-  mobile: { type: String, required: true },
+  mobileNo: { type: String, required: true },
   password: { type: String, required: true },
 });
 
